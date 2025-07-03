@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mental Health Assessment</title>
+</head>
+<body>
+    <h2>Mental Health Self-Assessment</h2>
+    <form method="POST" action="/predict">
+        <label>Feeling nervous or anxious (0-3):</label><br>
+        <input type="number" name="anxiety" required><br>
+        <label>Feeling depressed (0-3):</label><br>
+        <input type="number" name="depression" required><br>
+        <label>Sleep difficulties (0-3):</label><br>
+        <input type="number" name="sleep" required><br>
+        <label>Concentration issues (0-3):</label><br>
+        <input type="number" name="concentration" required><br><br>
+        <input type="submit" value="Check Risk">
+    </form>
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
